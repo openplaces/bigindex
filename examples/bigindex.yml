@@ -1,0 +1,9 @@
+development:
+  adapter: solr
+  solr_url: http://localhost:8981/solr
+test:
+  adapter: solr
+  solr_url: http://localhost:8982/solr
+production:
+  adapter: solr
+  solr_url: http://localhost:8983/solr

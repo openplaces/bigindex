@@ -9,6 +9,24 @@ This should be used in conjunction with BigRecord in order to provide a more com
 * Solr
 * Sphinx (planned)
 
+== Installation
+
+(1) Download and install Solr. Take a note of the url that solr is running on.
+
+(2) In your Rails application, add Bigindex as a gem to your config/environment.rb file:
+
+  config.gem "bigindex", :source => "http://gemcutter.org"
+  
+and run the following rake task to install all the gems listed for your Rails app:
+
+  [sudo] rake gems:install
+
+(3) Bootstrap Bigindex into your Rails application:
+
+  script/generate bigindex
+  
+(4) Modify the config file config/bigindex.yml[.sample] to correspond to your Solr server.
+
 == Getting Started
 
 Modify your Ruby class/model similarly to the following:
