@@ -1,16 +1,11 @@
-
 module BigIndex
   module Resource
 
     def self.included(model)
-      model.extend ClassMethods if defined?(ClassMethods)
-      model.const_set('Resource', self) unless model.const_defined?('Resource')
-
       model.class_eval do
-        include InstanceMethods
+        extend ClassMethods
 
         @indexed = true
-
         @index_configuration = {
           :fields => [],
           :additional_fields => nil,
@@ -40,8 +35,6 @@ module BigIndex
         end
       end
     end
-
-    alias model class
 
     module ClassMethods
 
@@ -153,9 +146,9 @@ module BigIndex
         items_processed = 0
         loop = 0
 
+        # Depending on whether the model has a scan or find method, use that.
+        # scan is from Bigrecord models, and find is from Activerecord.
         if self.respond_to?(:scan)
-          # TODO: This scan method doesn't always exist (in the case of ActiveRecord).
-          # This will need to be removed.
           self.scan(finder_options) do |r|
             items_processed += 1
             buffer << r
@@ -264,23 +257,6 @@ module BigIndex
         define_finder index_field[:finder_name]
       end
 
-      def add_index_field(index_field)
-        configuration = @index_configuration
-        if configuration[:fields]
-          unless configuration[:fields].include?(index_field)
-            configuration[:fields] << index_field
-          else
-            return
-          end
-        else
-          configuration[:fields] = [index_field]
-        end
-
-        define_method("#{index_field.field_name}_for_index") do
-          index_field.block ? index_field.block.call(self) : self.send(index_field.field_name.to_sym)
-        end
-      end
-
       ##
       #
       # Class #find method
@@ -382,7 +358,24 @@ module BigIndex
         options.assert_valid_keys(INDEX_FIND_OPTIONS)
       end
 
-      private
+    private
+
+      def add_index_field(index_field)
+        configuration = @index_configuration
+        if configuration[:fields]
+          unless configuration[:fields].include?(index_field)
+            configuration[:fields] << index_field
+          else
+            return
+          end
+        else
+          configuration[:fields] = [index_field]
+        end
+
+        define_method("#{index_field.field_name}_for_index") do
+          index_field.block ? index_field.block.call(self) : self.send(index_field.field_name.to_sym)
+        end
+      end
 
       ##
       #
@@ -418,45 +411,41 @@ module BigIndex
     end # module ClassMethods
 
 
-    module InstanceMethods
+    def index_adapter
+      self.class.index_adapter
+    end
 
-      def index_adapter
-        self.class.index_adapter
+    def index_configuration
+      self.class.index_configuration
+    end
+
+    def indexed?
+      self.class.indexed?
+    end
+
+    def record_id
+      self.id
+    end
+
+    def index_type
+      self.class.index_type
+    end
+
+    def index_id
+      "#{index_type}:#{record_id}"
+    end
+
+    def index_save
+      unless self.class.index_disabled || index_configuration[:auto_save] == false
+        index_adapter.index_save(self)
       end
+    end
 
-      def index_configuration
-        self.class.index_configuration
+    def index_destroy
+      unless index_configuration[:auto_save] == false
+        index_adapter.index_destroy(self)
       end
-
-      def indexed?
-        self.class.indexed?
-      end
-
-      def record_id
-        self.id
-      end
-
-      def index_type
-        self.class.index_type
-      end
-
-      def index_id
-        "#{index_type}:#{record_id}"
-      end
-
-      def index_save
-        unless self.class.index_disabled || index_configuration[:auto_save] == false
-          index_adapter.index_save(self)
-        end
-      end
-
-      def index_destroy
-        unless index_configuration[:auto_save] == false
-          index_adapter.index_destroy(self)
-        end
-      end
-
-    end # module InstanceMethods
+    end
 
   end # module Resource
 end # module BigIndex

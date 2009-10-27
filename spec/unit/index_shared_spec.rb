@@ -9,7 +9,6 @@ describe "a model with BigIndex::Resource", :shared => true do
     @model_class.should respond_to(:index_configuration=)
 
     # Verifying the index setup methods
-    @model_class.should respond_to(:add_index_field)
     @model_class.should respond_to(:index)
     @model_class.should respond_to(:rebuild_index)
 
