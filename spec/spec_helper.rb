@@ -1,6 +1,5 @@
 require 'pathname'
 require 'rubygems'
-gem 'rspec', '~>1.2'
 require 'spec'
 
 

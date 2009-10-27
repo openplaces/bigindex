@@ -1,6 +1,6 @@
 # Require BigRecord by first checking within the BigRecord project
 begin
-  require File.join(SPEC_ROOT.parent, "..", "bigrecord", "lib", "big_record")
+  require ENV['BR_PATH'] ? ENV['BR_PATH'] : File.join(SPEC_ROOT.parent, "..", "bigrecord", "lib", "big_record")
 rescue LoadError
   # If it wasn't found, try requiring it via gem.
   begin
