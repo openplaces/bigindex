@@ -12,7 +12,6 @@ begin
     gemspec.extra_rdoc_files = FileList["LICENSE","README.rdoc"].to_a
 
     gemspec.add_development_dependency "rspec"
-    gemspec.add_dependency "pathname"
     gemspec.add_dependency "solr-ruby", ">= 0.0.7"
   end
   Jeweler::GemcutterTasks.new

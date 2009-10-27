@@ -1,10 +1,9 @@
-require 'pathname'
 require 'rubygems'
+require 'pathname'
 require 'set'
 
-dir = Pathname(__FILE__).dirname.expand_path + 'big_index'
-vendor_dir = Pathname(__FILE__).dirname.parent.expand_path + 'vendor'
-
+dir = File.expand_path(File.join(File.dirname(__FILE__), 'big_index')) + '/'
+vendor_dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'vendor')) + '/'
 
 # Autoload the Solr library when requested
 # autoload :Solr, (vendor_dir + 'solr').to_s
@@ -21,11 +20,11 @@ module BigIndex
   extend Assertions
 
   def self.root
-    @root ||= Pathname(__FILE__).dirname.parent.expand_path
+    @root ||= File.expand_path(File.join(File.dirname(__FILE__), '..'))
   end
 
   def self.vendor_root
-    @vendor_root ||= (Pathname(__FILE__).dirname.parent + "vendor").expand_path
+    @vendor_root ||= File.expand_path(File.join(File.dirname(__FILE__), '..', 'vendor')) + '/'
   end
 
   def self.setup(name, options)

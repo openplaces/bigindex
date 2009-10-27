@@ -5,23 +5,21 @@
 
 Gem::Specification.new do |s|
   s.name = %q{bigindex}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["openplaces.org"]
-  s.date = %q{2009-10-12}
+  s.date = %q{2009-10-27}
   s.description = %q{A Rails plugin that drops into models and provides indexing functionality.}
   s.email = %q{bigrecord@openplaces.org}
   s.extra_rdoc_files = [
-    "MIT-LICENSE",
+    "LICENSE",
      "README.rdoc"
   ]
   s.files = [
     "Rakefile",
      "VERSION",
      "examples/bigindex.yml",
-     "generators/bigindex/bigindex_generator.rb",
-     "generators/bigindex/templates/bigindex.rake",
      "init.rb",
      "install.rb",
      "lib/big_index.rb",
@@ -33,7 +31,9 @@ Gem::Specification.new do |s|
      "lib/big_index/resource.rb",
      "lib/big_index/support.rb",
      "lib/big_index/support/assertions.rb",
+     "lib/big_index/tasks.rb",
      "lib/bigindex.rb",
+     "lib/tasks/bigindex.rake",
      "rails/init.rb",
      "spec/connections/activerecord/activerecord.yml",
      "spec/connections/activerecord/connection.rb",
@@ -45,6 +45,7 @@ Gem::Specification.new do |s|
      "spec/connections/bigrecord/migrations/20090706193019_add_companies_table.rb",
      "spec/connections/bigrecord/migrations/20090706194512_add_employees_table.rb",
      "spec/connections/bigrecord/migrations/20090706195741_add_zoos_table.rb",
+     "spec/debug.log",
      "spec/lib/activerecord/animal.rb",
      "spec/lib/activerecord/book.rb",
      "spec/lib/activerecord/novel.rb",
@@ -75,27 +76,27 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{A Rails plugin that drops into models and provides indexing functionality. Uses an adapter/repository pattern inspired by Datamapper to abstract the actual indexer used in the background, and exposes the model to a simple indexing API.}
   s.test_files = [
-    "spec/lib/bigrecord/book.rb",
-     "spec/lib/bigrecord/animal.rb",
-     "spec/lib/bigrecord/novel.rb",
-     "spec/lib/activerecord/book.rb",
-     "spec/lib/activerecord/animal.rb",
-     "spec/lib/activerecord/novel.rb",
-     "spec/connections/bigrecord/migrations/20090706194512_add_employees_table.rb",
+    "spec/connections/activerecord/connection.rb",
+     "spec/connections/bigrecord/connection.rb",
      "spec/connections/bigrecord/migrations/20090706182535_add_animals_table.rb",
      "spec/connections/bigrecord/migrations/20090706190623_add_books_table.rb",
-     "spec/connections/bigrecord/migrations/20090706195741_add_zoos_table.rb",
      "spec/connections/bigrecord/migrations/20090706193019_add_companies_table.rb",
-     "spec/connections/bigrecord/connection.rb",
-     "spec/connections/activerecord/connection.rb",
+     "spec/connections/bigrecord/migrations/20090706194512_add_employees_table.rb",
+     "spec/connections/bigrecord/migrations/20090706195741_add_zoos_table.rb",
+     "spec/lib/activerecord/animal.rb",
+     "spec/lib/activerecord/book.rb",
+     "spec/lib/activerecord/novel.rb",
+     "spec/lib/bigrecord/animal.rb",
+     "spec/lib/bigrecord/book.rb",
+     "spec/lib/bigrecord/novel.rb",
      "spec/spec_helper.rb",
-     "spec/unit/index_spec.rb",
-     "spec/unit/index_shared_spec.rb",
-     "spec/unit/bigindex_setup_spec.rb",
-     "spec/unit/inherited_class_spec.rb",
-     "spec/unit/adapters/solr_adapter_spec.rb",
      "spec/unit/adapters/abstract_adapter_spec.rb",
-     "spec/unit/adapters/adapter_shared_spec.rb"
+     "spec/unit/adapters/adapter_shared_spec.rb",
+     "spec/unit/adapters/solr_adapter_spec.rb",
+     "spec/unit/bigindex_setup_spec.rb",
+     "spec/unit/index_shared_spec.rb",
+     "spec/unit/index_spec.rb",
+     "spec/unit/inherited_class_spec.rb"
   ]
 
   if s.respond_to? :specification_version then

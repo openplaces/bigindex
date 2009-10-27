@@ -2,9 +2,7 @@ require 'pathname'
 require 'rubygems'
 require 'spec'
 
-
-SPEC_ROOT = Pathname(__FILE__).dirname.expand_path
-
+SPEC_ROOT = File.expand_path(File.join(File.dirname(__FILE__))) + '/'
 
 # Now we'll initialize the ORM connection
 begin
@@ -16,7 +14,7 @@ rescue LoadError
 end
 
 # Now we can require BigIndex
-require SPEC_ROOT.parent + "lib/big_index"
+require SPEC_ROOT + "../lib/big_index"
 
 CONFIGURATION_FILE_OPTIONS = YAML.load(File.new(File.dirname(__FILE__) + '/connections/bigindex.yml')).freeze
 BigIndex.configurations = CONFIGURATION_FILE_OPTIONS

@@ -6,8 +6,7 @@ require 'pathname'
 require 'spec/rake/spectask'
 
 DATA_STORES = ["bigrecord", "activerecord"]
-
-ROOT = Pathname(__FILE__).dirname.expand_path
+ROOT = dir = File.expand_path(File.join(File.dirname(__FILE__))) + '/'
 
 require ROOT + 'tasks/gem'
 require ROOT + 'tasks/rdoc'

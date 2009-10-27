@@ -2,13 +2,13 @@ desc "Run #{DATA_STORES.join(" and ")} specs"
 task :spec => DATA_STORES.map{|store| "spec:#{store}" }
 
 namespace :spec do
-  unit_specs        = Pathname.glob((ROOT + 'spec/unit/**/*_spec.rb').to_s).map{|f| f.to_s}
-  integration_specs = Pathname.glob((ROOT + 'spec/integration/**/*_spec.rb').to_s).map{|f| f.to_s}
-  all_specs         = Pathname.glob((ROOT + 'spec/**/*_spec.rb').to_s).map{|f| f.to_s}
+  unit_specs        = Dir[(ROOT + 'spec/unit/**/*_spec.rb')].map{|f| f.to_s}
+  integration_specs = Dir[(ROOT + 'spec/integration/**/*_spec.rb')].map{|f| f.to_s}
+  all_specs         = Dir[(ROOT + 'spec/**/*_spec.rb')].map{|f| f.to_s}
 
   def run_spec(name, adapter, files, rcov)
     if (files.class == String)
-      return run_spec(name, adapter, Pathname.glob(files.to_s).map{|f| f.to_s}, rcov)
+      return run_spec(name, adapter, Dir[files.to_s].map{|f| f.to_s}, rcov)
     else
       Spec::Rake::SpecTask.new(name) do |t|
         t.spec_opts << File.open("spec/spec.opts").readlines.map{|x| x.chomp}
