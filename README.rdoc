@@ -23,7 +23,7 @@ and run the following rake task to install all the gems listed for your Rails ap
 
 (3) Add the following line to the bottom of your RAILS_ROOT/Rakefile
 
-  require 'bigindex/tasks'
+  require 'big_index/tasks'
 
 === NOTE: Skip steps (4) and (5) if you're using the bigindex-solr package.
 
