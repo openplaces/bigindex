@@ -1,3 +1,6 @@
+# The code here was created for Bigindex and used to extend the existing
+# solr-ruby library, therefore it falls under the ASF license:
+
 # The ASF licenses this file to You under the Apache License, Version 2.0
 # (the "License"); you may not use this file except in compliance with
 # the License.  You may obtain a copy of the License at

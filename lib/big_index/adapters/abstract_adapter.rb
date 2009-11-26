@@ -1,9 +1,16 @@
 module BigIndex
   module Adapters
 
+    # This {AbstractAdapter} defines the API needed by BigIndex to provide
+    # indexing functionality by different indexers. For a concrete example
+    # of an implemented adapter, refer to {SolrAdapter}.
+    #
     class AbstractAdapter
 
       attr_reader :name, :options, :connection
+
+      # BigIndex Adapter API methods ====================================
+
 
       def adapter_name
         'abstract'
@@ -57,6 +64,9 @@ module BigIndex
         raise NotImplementedError
       end
 
+
+      # End of BigIndex Adapter API ====================================
+
     private
 
       def initialize(name, options)
@@ -64,7 +74,7 @@ module BigIndex
         @options = options
       end
 
-    end # class AbstractAdapter
+    end
 
   end # module Adapters
 end # module BigIndex

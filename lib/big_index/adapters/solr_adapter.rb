@@ -1,11 +1,17 @@
 module BigIndex
   module Adapters
 
+    # This adapter is used to interact with the Solr search system. Implemented
+    # with the Apache provided solr-ruby gem and extended functionality
+    # in vendor/solr of Bigindex.
+    #
     class SolrAdapter < AbstractAdapter
 
+      # Extended the solr-ruby gem to contain custom code for Bigindex
       include ::Solr::AdapterMethods
 
       # BigIndex Adapter API methods ====================================
+
 
       def adapter_name
         'solr'
@@ -164,6 +170,7 @@ module BigIndex
         solr_optimize
       end
 
+
       # End of BigIndex Adapter API ====================================
 
     private
@@ -174,7 +181,7 @@ module BigIndex
         super(name, options)
       end
 
-    end # class SolrAdapter
+    end
 
   end # module Adapters
 end # module BigIndex

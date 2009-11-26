@@ -2,6 +2,18 @@ require File.join(File.dirname(__FILE__), 'support')
 
 module BigIndex
 
+  # = Index Fields
+  #
+  # Index fields define the blocks of information that should be used when
+  # indexing (creation and retrieval) occurs for a class.
+  #
+  # Although these IndexField objects aren't created manually, they're
+  # implicitly created from calls to the {BigIndex::Model#index} macro.
+  #
+  # At a minimum, an IndexField requires a name and will default to type "text".
+  # In this case, the name needs to refer to a valid method (of appropriate
+  # type), and will just index the return of the method.
+  #
   class IndexField
     include Assertions
 

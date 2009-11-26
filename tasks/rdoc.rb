@@ -1,8 +1,14 @@
-desc 'Generate documentation for Bigindex.'
-Rake::RDocTask.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Bigindex'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('../README.rdoc')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+begin
+  require 'yard'
+
+  desc 'Generate documentation for Bigindex'
+  YARD::Rake::YardocTask.new do |t|
+    t.files = %w(- guides/*.rdoc)
+    t.options = ["--title", "Bigindex Documentation"]
+  end
+
+  desc 'Generate documentation for Bigindex'
+  task :rdoc => :yard
+rescue LoadError
+  puts "yard not available. Install it with: sudo gem install yard"
 end

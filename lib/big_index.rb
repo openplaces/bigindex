@@ -5,13 +5,11 @@ require 'set'
 dir = File.expand_path(File.join(File.dirname(__FILE__), 'big_index')) + '/'
 vendor_dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'vendor')) + '/'
 
-# Autoload the Solr library when requested
-# autoload :Solr, (vendor_dir + 'solr').to_s
 require (vendor_dir + 'solr').to_s
-
 require dir + 'support'
 require dir + 'adapters'
 require dir + 'repository'
+require dir + 'model'
 require dir + 'resource'
 require dir + 'index_field'
 
