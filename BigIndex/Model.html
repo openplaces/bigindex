@@ -1,0 +1,1769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Module: BigIndex::Model</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (M)</a> &raquo; 
+    <a title="BigIndex" href="../BigIndex.html">BigIndex</a>
+     &raquo; 
+    <span class="title">Model</span>
+  
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Namespace List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: BigIndex::Model 
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/big_index/model.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+This is the module that mixes in Class level behavior for a
+<tt><a title="BigIndex::Resource" href="Resource.html">BigIndex::Resource</a></tt>.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="INDEX_FIND_OPTIONS-constant ">INDEX_FIND_OPTIONS =
+            <span class="summary_desc"></span>
+        </dt>
+        <dd><pre class="code"><span class='lbrack token'>[</span> <span class='symbol val'>:source</span><span class='comma token'>,</span> <span class='symbol val'>:offset</span><span class='comma token'>,</span> <span class='symbol val'>:limit</span><span class='comma token'>,</span> <span class='symbol val'>:conditions</span><span class='comma token'>,</span> <span class='symbol val'>:order</span><span class='comma token'>,</span>
+<span class='symbol val'>:group</span><span class='comma token'>,</span> <span class='symbol val'>:fields</span><span class='comma token'>,</span> <span class='symbol val'>:debug</span><span class='comma token'>,</span> <span class='symbol val'>:view</span><span class='comma token'>,</span> <span class='symbol val'>:format</span><span class='comma token'>,</span> <span class='symbol val'>:raw_result</span> <span class='rbrack token'>]</span>
+</pre></dd>
+      
+    </dl>
+  
+
+
+
+  <h2>Method Summary</h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#default_index_views_hash (instance method)" href="#default_index_views_hash-instance_method">- (Object) <strong>default_index_views_hash</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#default_repository_name (instance method)" href="#default_repository_name-instance_method">- (Object) <strong>default_repository_name</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#drop_index (instance method)" href="#drop_index-instance_method">- (TrueClass) <strong>drop_index</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Drops the index for the current model.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#find_every_by_index (instance method)" href="#find_every_by_index-instance_method">- (Object) <strong>find_every_by_index</strong>(options = {}) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Indexed find method called by <tt><a title="#find_with_index" href="#find_with_index-instance_method">#find_with_index</a></tt> and dispatches the actual
+search to the adapter.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#find_with_index (instance method)" href="#find_with_index-instance_method">- (Object) <strong>find_with_index</strong>(*args) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Class #find method.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index (instance method)" href="#index-instance_method">- (Object) <strong>index</strong>(*params, &amp;block) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Macro for defining a class attribute as an indexed field.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index_adapter (instance method)" href="#index_adapter-instance_method">- (Object) <strong>index_adapter</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index_configuration (instance method)" href="#index_configuration-instance_method">- (Object) <strong>index_configuration</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index_configuration= (instance method)" href="#index_configuration%3D-instance_method">- (Object) <strong>index_configuration=</strong>(config) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index_disabled (instance method)" href="#index_disabled-instance_method">- (Boolean) <strong>index_disabled</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Get the status of whether indexing is disabled or not.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index_disabled= (instance method)" href="#index_disabled%3D-instance_method">- (Object) <strong>index_disabled=</strong>(bool) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Toggle the indexing on/off temporarily for the class.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index_field (instance method)" href="#index_field-instance_method">- (Object) <strong>index_field</strong>(field_name) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index_fields (instance method)" href="#index_fields-instance_method">- (Object) <strong>index_fields</strong>(view_name = :default) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index_type (instance method)" href="#index_type-instance_method">- (String) <strong>index_type</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+The index_type will be the name of the model class by default.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index_view (instance method)" href="#index_view-instance_method">- (Object) <strong>index_view</strong>(name, columns) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index_view_names (instance method)" href="#index_view_names-instance_method">- (Object) <strong>index_view_names</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index_views (instance method)" href="#index_views-instance_method">- (Object) <strong>index_views</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#index_views_hash (instance method)" href="#index_views_hash-instance_method">- (Object) <strong>index_views_hash</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#indexed? (instance method)" href="#indexed%3F-instance_method">- (TrueClass) <strong>indexed?</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Whenever a Ruby class includes BigIndex::Resource, it&#8217;ll be
+considered as indexed.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#rebuild_index (instance method)" href="#rebuild_index-instance_method">- (Integer) <strong>rebuild_index</strong>(options = {}, finder_options = {}) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Dispatches a command to the current adapter to rebuild the index.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#repository (instance method)" href="#repository-instance_method">- (Object) <strong>repository</strong>(name = nil) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#repository_name (instance method)" href="#repository_name-instance_method">- (Object) <strong>repository_name</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#required_index_fields (instance method)" href="#required_index_fields-instance_method">- (Object) <strong>required_index_fields</strong> </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature"><a title="#validate_index_find_options (instance method)" href="#validate_index_find_options-instance_method">- (Object) <strong>validate_index_find_options</strong>(options) </a>
+  
+  </span>
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Validates the options passed to the find methods based on the accepted keys
+defined in <tt><a title="INDEX_FIND_OPTIONS" href="#INDEX_FIND_OPTIONS-constant">INDEX_FIND_OPTIONS</a></tt>.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+  <div id="method_details">
+    <h2>Method Details</h2>
+    
+      <div class="method_details first">
+  <p class="signature first" id="default_index_views_hash-instance_method">
+  
+    - (<tt>Object</tt>) <strong>default_index_views_hash</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+197
+198
+199</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 197</span>
+
+<span class='def def kw'>def</span> <span class='default_index_views_hash identifier id'>default_index_views_hash</span>
+  <span class='lbrace token'>{</span><span class='symbol val'>:default</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='index_configuration identifier id'>index_configuration</span><span class='lbrack token'>[</span><span class='symbol val'>:fields</span><span class='rbrack token'>]</span><span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="default_repository_name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>default_repository_name</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 8</span>
+
+<span class='def def kw'>def</span> <span class='default_repository_name identifier id'>default_repository_name</span>
+  <span class='Repository constant id'>Repository</span><span class='dot token'>.</span><span class='default_name identifier id'>default_name</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="drop_index-instance_method">
+  
+    - (<tt>TrueClass</tt>) <strong>drop_index</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Drops the index for the current model.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>TrueClass</tt>, <tt>FalseClass</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        
+whether the index was dropped.
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+176
+177
+178</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 176</span>
+
+<span class='def def kw'>def</span> <span class='drop_index identifier id'>drop_index</span>
+  <span class='index_adapter identifier id'>index_adapter</span><span class='dot token'>.</span><span class='drop_index identifier id'>drop_index</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="find_every_by_index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>find_every_by_index</strong>(options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Indexed find method called by <tt><a title="#find_with_index" href="#find_with_index-instance_method">#find_with_index</a></tt> and dispatches the actual
+search to the adapter.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 273</span>
+
+<span class='def def kw'>def</span> <span class='find_every_by_index identifier id'>find_every_by_index</span><span class='lparen token'>(</span><span class='options identifier id'>options</span><span class='assign token'>=</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='comment val'># Construct the query. First add the type information.</span>
+  <span class='query identifier id'>query</span> <span class='assign token'>=</span><span class='string val'>&quot;&quot;</span>
+
+  <span class='comment val'># set default operator</span>
+  <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:operator</span><span class='rbrack token'>]</span> <span class='opasgn op'>||=</span> <span class='symbol val'>:or</span>
+
+  <span class='comment val'># First add the conditions predicates</span>
+  <span class='conditions identifier id'>conditions</span> <span class='assign token'>=</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:conditions</span><span class='rbrack token'>]</span>
+  <span class='if if kw'>if</span> <span class='conditions identifier id'>conditions</span><span class='dot token'>.</span><span class='is_a? fid id'>is_a?</span><span class='lparen token'>(</span><span class='String constant id'>String</span><span class='rparen token'>)</span>
+    <span class='query identifier id'>query</span> <span class='lshft op'>&lt;&lt;</span> <span class='conditions identifier id'>conditions</span>
+  <span class='elsif elsif kw'>elsif</span> <span class='conditions identifier id'>conditions</span><span class='dot token'>.</span><span class='is_a? fid id'>is_a?</span><span class='lparen token'>(</span><span class='Array constant id'>Array</span><span class='rparen token'>)</span> <span class='and and kw'>and</span> <span class='notop op'>!</span><span class='conditions identifier id'>conditions</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+    <span class='nb_conditions identifier id'>nb_conditions</span> <span class='assign token'>=</span> <span class='conditions identifier id'>conditions</span><span class='dot token'>.</span><span class='size identifier id'>size</span> <span class='minus op'>-</span> <span class='integer val'>1</span>
+    <span class='i identifier id'>i</span> <span class='assign token'>=</span> <span class='integer val'>0</span>
+    <span class='query identifier id'>query</span> <span class='lshft op'>&lt;&lt;</span> <span class='conditions identifier id'>conditions</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/\?/</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='c identifier id'>c</span><span class='bitor op'>|</span>
+      <span class='i identifier id'>i</span> <span class='opasgn op'>+=</span> <span class='integer val'>1</span>
+      <span class='raise identifier id'>raise</span> <span class='ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;Missing condition argument&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='i identifier id'>i</span> <span class='leq op'>&lt;=</span> <span class='nb_conditions identifier id'>nb_conditions</span>
+      <span class='dstring node'>&quot;#{conditions[i]}&quot;</span>
+    <span class='end end kw'>end</span>
+  <span class='elsif elsif kw'>elsif</span> <span class='conditions identifier id'>conditions</span><span class='dot token'>.</span><span class='is_a? fid id'>is_a?</span><span class='lparen token'>(</span><span class='Hash constant id'>Hash</span><span class='rparen token'>)</span> <span class='and and kw'>and</span> <span class='notop op'>!</span><span class='conditions identifier id'>conditions</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+    <span class='conditions identifier id'>conditions</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='k identifier id'>k</span><span class='comma token'>,</span> <span class='v identifier id'>v</span><span class='bitor op'>|</span>
+      <span class='query identifier id'>query</span> <span class='lshft op'>&lt;&lt;</span> <span class='dstring node'>&quot;#{k}:#{v} &quot;</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+
+  <span class='fields identifier id'>fields</span> <span class='assign token'>=</span>
+    <span class='if if kw'>if</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:fields</span><span class='rbrack token'>]</span>
+      <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:fields</span><span class='rbrack token'>]</span>
+    <span class='else else kw'>else</span>
+      <span class='fields identifier id'>fields</span> <span class='assign token'>=</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:view</span><span class='rbrack token'>]</span> <span class='question op'>?</span> <span class='index_views_hash identifier id'>index_views_hash</span><span class='lbrack token'>[</span><span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:view</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span> <span class='colon op'>:</span> <span class='index_views_hash identifier id'>index_views_hash</span><span class='lbrack token'>[</span><span class='symbol val'>:default</span><span class='rbrack token'>]</span>
+      <span class='fields identifier id'>fields</span> <span class='opasgn op'>||=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+    <span class='end end kw'>end</span>
+
+  <span class='if if kw'>if</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:format</span><span class='rbrack token'>]</span> <span class='eq op'>==</span> <span class='symbol val'>:ids</span>
+    <span class='index_adapter identifier id'>index_adapter</span><span class='dot token'>.</span><span class='find_ids_by_index identifier id'>find_ids_by_index</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='comma token'>,</span> <span class='query identifier id'>query</span><span class='comma token'>,</span> <span class='lbrace token'>{</span>  <span class='symbol val'>:offset</span>   <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:offset</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+                                              <span class='symbol val'>:order</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:order</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+                                              <span class='symbol val'>:limit</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:limit</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+                                              <span class='symbol val'>:fields</span>   <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='fields identifier id'>fields</span><span class='comma token'>,</span>
+                                              <span class='symbol val'>:operator</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:operator</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+                                              <span class='symbol val'>:raw_result</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:raw_result</span><span class='rbrack token'>]</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='else else kw'>else</span>
+    <span class='index_adapter identifier id'>index_adapter</span><span class='dot token'>.</span><span class='find_by_index identifier id'>find_by_index</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='comma token'>,</span> <span class='query identifier id'>query</span><span class='comma token'>,</span> <span class='lbrace token'>{</span>  <span class='symbol val'>:offset</span>   <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:offset</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+                                          <span class='symbol val'>:order</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:order</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+                                          <span class='symbol val'>:limit</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:limit</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+                                          <span class='symbol val'>:operator</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:operator</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+                                          <span class='symbol val'>:raw_result</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:raw_result</span><span class='rbrack token'>]</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="find_with_index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>find_with_index</strong>(*args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Class #find method
+</p>
+<p>
+From - alias_method_chain :find, :index
+</p>
+<p>
+This redefines the original #find method of the class, and replaces it with
+an indexed version of #find. The indexed version can be bypassed (dispatch
+to original instead) by passing :bypass_index =&gt; true
+</p>
+<p>
+The instantiated records either as a single object (case of :first), or as
+an array of objects. When the option :raw_result =&gt; true is passed to
+it, it will return a result object specific to the indexer used. In the
+case of Solr, it will return a SolrResult object for example.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 250</span>
+
+<span class='def def kw'>def</span> <span class='find_with_index identifier id'>find_with_index</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='extract_options! fid id'>extract_options!</span>
+  <span class='unless unless kw'>unless</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:bypass_index</span><span class='rbrack token'>]</span>
+    <span class='case case kw'>case</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='first identifier id'>first</span>
+      <span class='when when kw'>when</span> <span class='symbol val'>:first</span> <span class='then then kw'>then</span>
+        <span class='validate_index_find_options identifier id'>validate_index_find_options</span><span class='lparen token'>(</span><span class='options identifier id'>options</span><span class='rparen token'>)</span>
+        <span class='find_every_by_index identifier id'>find_every_by_index</span><span class='lparen token'>(</span><span class='options identifier id'>options</span><span class='dot token'>.</span><span class='merge identifier id'>merge</span><span class='lparen token'>(</span><span class='lbrace token'>{</span><span class='symbol val'>:limit</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>1</span><span class='rbrace token'>}</span><span class='rparen token'>)</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='first identifier id'>first</span>
+      <span class='when when kw'>when</span> <span class='symbol val'>:all</span>   <span class='then then kw'>then</span>
+        <span class='validate_index_find_options identifier id'>validate_index_find_options</span><span class='lparen token'>(</span><span class='options identifier id'>options</span><span class='rparen token'>)</span>
+        <span class='find_every_by_index identifier id'>find_every_by_index</span><span class='lparen token'>(</span><span class='options identifier id'>options</span><span class='rparen token'>)</span>
+      <span class='else else kw'>else</span>
+        <span class='find_from_ids identifier id'>find_from_ids</span><span class='lparen token'>(</span><span class='args identifier id'>args</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='rparen token'>)</span>
+    <span class='end end kw'>end</span>
+  <span class='else else kw'>else</span>
+    <span class='options identifier id'>options</span><span class='dot token'>.</span><span class='delete identifier id'>delete</span><span class='lparen token'>(</span><span class='symbol val'>:bypass_index</span><span class='rparen token'>)</span>
+    <span class='find_without_index identifier id'>find_without_index</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='lparen token'>(</span><span class='args identifier id'>args</span> <span class='plus op'>+</span> <span class='lbrack token'>[</span><span class='options identifier id'>options</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index</strong>(*params, &amp;block) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Macro for defining a class attribute as an indexed field.
+</p>
+<p>
+Also creates the corresponding attribute finder method, which defaults to
+the field name. This can be defined with the :finder_name =&gt;
+&quot;anothername&quot; option.
+</p>
+<p>
+Refer to <tt><a title="IndexField" href="IndexField.html">IndexField</a></tt> for more information on defining fields.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+227
+228
+229
+230
+231
+232
+233
+234</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 227</span>
+
+<span class='def def kw'>def</span> <span class='index identifier id'>index</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='params identifier id'>params</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
+  <span class='index_field identifier id'>index_field</span> <span class='assign token'>=</span> <span class='IndexField constant id'>IndexField</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='params identifier id'>params</span><span class='comma token'>,</span> <span class='block identifier id'>block</span><span class='rparen token'>)</span>
+
+  <span class='add_index_field identifier id'>add_index_field</span><span class='lparen token'>(</span><span class='index_field identifier id'>index_field</span><span class='rparen token'>)</span>
+
+  <span class='comment val'># Create the attribute finder method</span>
+  <span class='define_finder identifier id'>define_finder</span> <span class='index_field identifier id'>index_field</span><span class='lbrack token'>[</span><span class='symbol val'>:finder_name</span><span class='rbrack token'>]</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index_adapter-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index_adapter</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 25</span>
+
+<span class='def def kw'>def</span> <span class='index_adapter identifier id'>index_adapter</span>
+  <span class='repository identifier id'>repository</span><span class='dot token'>.</span><span class='adapter identifier id'>adapter</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index_configuration-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index_configuration</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 29</span>
+
+<span class='def def kw'>def</span> <span class='index_configuration identifier id'>index_configuration</span>
+  <span class='begin begin kw'>begin</span>
+    <span class='config identifier id'>config</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span>
+    <span class='config identifier id'>config</span> <span class='assign token'>=</span> <span class='@index_configuration ivar id'>@index_configuration</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span>
+
+    <span class='config identifier id'>config</span><span class='lbrack token'>[</span><span class='symbol val'>:fields</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='@index_configuration ivar id'>@index_configuration</span><span class='lbrack token'>[</span><span class='symbol val'>:fields</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span> <span class='if if_mod kw'>if</span> <span class='@index_configuration ivar id'>@index_configuration</span><span class='lbrack token'>[</span><span class='symbol val'>:fields</span><span class='rbrack token'>]</span>
+    <span class='config identifier id'>config</span><span class='lbrack token'>[</span><span class='symbol val'>:exclude_fields</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='@index_configuration ivar id'>@index_configuration</span><span class='lbrack token'>[</span><span class='symbol val'>:exclude_fields</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='dup identifier id'>dup</span> <span class='if if_mod kw'>if</span> <span class='@index_configuration ivar id'>@index_configuration</span><span class='lbrack token'>[</span><span class='symbol val'>:exclude_fields</span><span class='rbrack token'>]</span>
+
+    <span class='config identifier id'>config</span>
+  <span class='rescue rescue kw'>rescue</span>
+   <span class='lbrace token'>{</span><span class='rbrace token'>}</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index_configuration=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index_configuration=</strong>(config) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 43</span>
+
+<span class='def def kw'>def</span> <span class='index_configuration= identifier id'>index_configuration=</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='rparen token'>)</span>
+  <span class='@index_configuration ivar id'>@index_configuration</span> <span class='assign token'>=</span> <span class='config identifier id'>config</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index_disabled-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>index_disabled</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Get the status of whether indexing is disabled or not.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        
+True if indexing is disabled. False otherwise.
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 93</span>
+
+<span class='def def kw'>def</span> <span class='index_disabled identifier id'>index_disabled</span>
+  <span class='@index_disabled ivar id'>@index_disabled</span> <span class='opasgn op'>||=</span> <span class='false false kw'>false</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index_disabled=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index_disabled=</strong>(bool) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Toggle the indexing on/off temporarily for the class.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <span class='name'>Pass</span>
+      
+      
+      
+        &mdash;
+        
+true to disable indexing, false otherwise
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+84
+85
+86</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 84</span>
+
+<span class='def def kw'>def</span> <span class='index_disabled= identifier id'>index_disabled=</span> <span class='bool identifier id'>bool</span>
+  <span class='@index_disabled ivar id'>@index_disabled</span> <span class='assign token'>=</span> <span class='bool identifier id'>bool</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index_field-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index_field</strong>(field_name) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+207
+208
+209
+210
+211
+212</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 207</span>
+
+<span class='def def kw'>def</span> <span class='index_field identifier id'>index_field</span><span class='lparen token'>(</span><span class='field_name identifier id'>field_name</span><span class='rparen token'>)</span>
+  <span class='field_name identifier id'>field_name</span> <span class='assign token'>=</span> <span class='field_name identifier id'>field_name</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
+  <span class='if if kw'>if</span> <span class='index_configuration identifier id'>index_configuration</span><span class='lbrack token'>[</span><span class='symbol val'>:fields</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='map identifier id'>map</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:field_name</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='map identifier id'>map</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:to_s</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='include? fid id'>include?</span><span class='lparen token'>(</span><span class='field_name identifier id'>field_name</span><span class='rparen token'>)</span>
+    <span class='index_configuration identifier id'>index_configuration</span><span class='lbrack token'>[</span><span class='symbol val'>:fields</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='select identifier id'>select</span><span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='field identifier id'>field</span><span class='bitor op'>|</span> <span class='field identifier id'>field</span><span class='dot token'>.</span><span class='field_name identifier id'>field_name</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span> <span class='eq op'>==</span> <span class='field_name identifier id'>field_name</span><span class='rbrace token'>}</span><span class='dot token'>.</span><span class='first identifier id'>first</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index_fields-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index_fields</strong>(view_name = :default) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+201
+202
+203
+204
+205</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 201</span>
+
+<span class='def def kw'>def</span> <span class='index_fields identifier id'>index_fields</span><span class='lparen token'>(</span><span class='view_name identifier id'>view_name</span> <span class='assign token'>=</span> <span class='symbol val'>:default</span><span class='rparen token'>)</span>
+  <span class='field_list identifier id'>field_list</span> <span class='assign token'>=</span> <span class='index_views_hash identifier id'>index_views_hash</span><span class='lbrack token'>[</span><span class='view_name identifier id'>view_name</span><span class='rbrack token'>]</span>
+
+  <span class='index_configuration identifier id'>index_configuration</span><span class='lbrack token'>[</span><span class='symbol val'>:fields</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='select identifier id'>select</span><span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='field identifier id'>field</span><span class='bitor op'>|</span> <span class='field_list identifier id'>field_list</span><span class='dot token'>.</span><span class='include? fid id'>include?</span><span class='lparen token'>(</span><span class='field identifier id'>field</span><span class='dot token'>.</span><span class='field_name identifier id'>field_name</span><span class='rparen token'>)</span><span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index_type-instance_method">
+  
+    - (<tt>String</tt>) <strong>index_type</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+The index_type will be the name of the model class by default.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 75</span>
+
+<span class='def def kw'>def</span> <span class='index_type identifier id'>index_type</span>
+  <span class='name identifier id'>name</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index_view-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index_view</strong>(name, columns) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+180
+181
+182
+183</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 180</span>
+
+<span class='def def kw'>def</span> <span class='index_view identifier id'>index_view</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='columns identifier id'>columns</span><span class='rparen token'>)</span>
+  <span class='write_inheritable_attribute identifier id'>write_inheritable_attribute</span><span class='lparen token'>(</span><span class='symbol val'>:index_views_hash</span><span class='comma token'>,</span> <span class='read_inheritable_attribute identifier id'>read_inheritable_attribute</span><span class='lparen token'>(</span><span class='symbol val'>:index_views_hash</span><span class='rparen token'>)</span> <span class='orop op'>||</span> <span class='default_index_views_hash identifier id'>default_index_views_hash</span><span class='rparen token'>)</span>
+  <span class='read_inheritable_attribute identifier id'>read_inheritable_attribute</span><span class='lparen token'>(</span><span class='symbol val'>:index_views_hash</span><span class='rparen token'>)</span><span class='lbrack token'>[</span><span class='name identifier id'>name</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='columns identifier id'>columns</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index_view_names-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index_view_names</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+189
+190
+191</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 189</span>
+
+<span class='def def kw'>def</span> <span class='index_view_names identifier id'>index_view_names</span>
+  <span class='@index_view_names ivar id'>@index_view_names</span> <span class='opasgn op'>||=</span> <span class='index_views_hash identifier id'>index_views_hash</span><span class='dot token'>.</span><span class='keys identifier id'>keys</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index_views-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index_views</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+185
+186
+187</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 185</span>
+
+<span class='def def kw'>def</span> <span class='index_views identifier id'>index_views</span>
+  <span class='@index_views ivar id'>@index_views</span> <span class='opasgn op'>||=</span> <span class='index_views_hash identifier id'>index_views_hash</span><span class='dot token'>.</span><span class='values identifier id'>values</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="index_views_hash-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index_views_hash</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+193
+194
+195</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 193</span>
+
+<span class='def def kw'>def</span> <span class='index_views_hash identifier id'>index_views_hash</span>
+  <span class='read_inheritable_attribute identifier id'>read_inheritable_attribute</span><span class='lparen token'>(</span><span class='symbol val'>:index_views_hash</span><span class='rparen token'>)</span> <span class='orop op'>||</span> <span class='default_index_views_hash identifier id'>default_index_views_hash</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="indexed?-instance_method">
+  
+    - (<tt>TrueClass</tt>) <strong>indexed?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Whenever a Ruby class includes BigIndex::Resource, it&#8217;ll be
+considered as indexed.
+</p>
+<p>
+This method checks whether the current class, as well as any ancestors in
+its inheritance tree, is indexed.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>TrueClass</tt>, <tt>FalseClass</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        
+whether or not the current class, or any of its ancestors are indexed.
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 57</span>
+
+<span class='def def kw'>def</span> <span class='indexed? fid id'>indexed?</span>
+  <span class='if if kw'>if</span> <span class='@indexed ivar id'>@indexed</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span>
+    <span class='@indexed ivar id'>@indexed</span> <span class='assign token'>=</span> <span class='false false kw'>false</span>
+    <span class='ancestors identifier id'>ancestors</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='a identifier id'>a</span><span class='bitor op'>|</span>
+      <span class='if if kw'>if</span> <span class='a identifier id'>a</span><span class='dot token'>.</span><span class='respond_to? fid id'>respond_to?</span><span class='lparen token'>(</span><span class='symbol val'>:indexed?</span><span class='rparen token'>)</span> <span class='and and kw'>and</span> <span class='a identifier id'>a</span><span class='dot token'>.</span><span class='indexed? fid id'>indexed?</span>
+        <span class='@indexed ivar id'>@indexed</span> <span class='assign token'>=</span> <span class='true true kw'>true</span>
+        <span class='break break kw'>break</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+  <span class='@indexed ivar id'>@indexed</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="rebuild_index-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>rebuild_index</strong>(options = {}, finder_options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Dispatches a command to the current adapter to rebuild the index.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        
+representing number of items processed.
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 102</span>
+
+<span class='def def kw'>def</span> <span class='rebuild_index identifier id'>rebuild_index</span><span class='lparen token'>(</span><span class='options identifier id'>options</span><span class='assign token'>=</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='finder_options identifier id'>finder_options</span><span class='assign token'>=</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='logger identifier id'>logger</span><span class='dot token'>.</span><span class='info identifier id'>info</span> <span class='dstring node'>&quot;=== Rebuilding index for: #{self.index_type}&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:silent</span><span class='rbrack token'>]</span>
+
+  <span class='if if kw'>if</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:drop</span><span class='rbrack token'>]</span>
+    <span class='logger identifier id'>logger</span><span class='dot token'>.</span><span class='info identifier id'>info</span> <span class='dstring node'>&quot;Dropping index for: #{self.index_type}&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:silent</span><span class='rbrack token'>]</span>
+    <span class='index_adapter identifier id'>index_adapter</span><span class='dot token'>.</span><span class='drop_index identifier id'>drop_index</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+
+  <span class='finder_options identifier id'>finder_options</span><span class='lbrack token'>[</span><span class='symbol val'>:batch_size</span><span class='rbrack token'>]</span> <span class='opasgn op'>||=</span> <span class='integer val'>100</span>
+  <span class='finder_options identifier id'>finder_options</span><span class='lbrack token'>[</span><span class='symbol val'>:view</span><span class='rbrack token'>]</span> <span class='opasgn op'>||=</span> <span class='symbol val'>:all</span>
+  <span class='finder_options identifier id'>finder_options</span><span class='lbrack token'>[</span><span class='symbol val'>:bypass_index</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='true true kw'>true</span>
+
+  <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:batch_size</span><span class='rbrack token'>]</span> <span class='opasgn op'>||=</span> <span class='integer val'>100</span>
+  <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:commit</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='true true kw'>true</span> <span class='unless unless_mod kw'>unless</span> <span class='options identifier id'>options</span><span class='dot token'>.</span><span class='has_key? fid id'>has_key?</span><span class='lparen token'>(</span><span class='symbol val'>:commit</span><span class='rparen token'>)</span>
+  <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:optimize</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='true true kw'>true</span> <span class='unless unless_mod kw'>unless</span> <span class='options identifier id'>options</span><span class='dot token'>.</span><span class='has_key? fid id'>has_key?</span><span class='lparen token'>(</span><span class='symbol val'>:optimize</span><span class='rparen token'>)</span>
+
+  <span class='logger identifier id'>logger</span><span class='dot token'>.</span><span class='info identifier id'>info</span> <span class='dstring node'>&quot;Offset: #{finder_options[:offset]}&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:silent</span><span class='rbrack token'>]</span>
+  <span class='logger identifier id'>logger</span><span class='dot token'>.</span><span class='info identifier id'>info</span> <span class='dstring node'>&quot;Stop row: #{finder_options[:stop_row]}&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:silent</span><span class='rbrack token'>]</span>
+
+  <span class='buffer identifier id'>buffer</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='items_processed identifier id'>items_processed</span> <span class='assign token'>=</span> <span class='integer val'>0</span>
+  <span class='loop identifier id'>loop</span> <span class='assign token'>=</span> <span class='integer val'>0</span>
+
+  <span class='comment val'># Depending on whether the model has a scan or find method, use that.</span>
+  <span class='comment val'># scan is from Bigrecord models, and find is from Activerecord.</span>
+  <span class='if if kw'>if</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='respond_to? fid id'>respond_to?</span><span class='lparen token'>(</span><span class='symbol val'>:scan</span><span class='rparen token'>)</span>
+    <span class='self self kw'>self</span><span class='dot token'>.</span><span class='scan identifier id'>scan</span><span class='lparen token'>(</span><span class='finder_options identifier id'>finder_options</span><span class='rparen token'>)</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='r identifier id'>r</span><span class='bitor op'>|</span>
+      <span class='items_processed identifier id'>items_processed</span> <span class='opasgn op'>+=</span> <span class='integer val'>1</span>
+      <span class='buffer identifier id'>buffer</span> <span class='lshft op'>&lt;&lt;</span> <span class='r identifier id'>r</span>
+      <span class='if if kw'>if</span> <span class='buffer identifier id'>buffer</span><span class='dot token'>.</span><span class='size identifier id'>size</span> <span class='gt op'>&gt;</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:batch_size</span><span class='rbrack token'>]</span>
+        <span class='loop identifier id'>loop</span> <span class='opasgn op'>+=</span> <span class='integer val'>1</span>
+        <span class='index_adapter identifier id'>index_adapter</span><span class='dot token'>.</span><span class='process_index_batch identifier id'>process_index_batch</span><span class='lparen token'>(</span><span class='buffer identifier id'>buffer</span><span class='comma token'>,</span> <span class='loop identifier id'>loop</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='rparen token'>)</span>
+        <span class='buffer identifier id'>buffer</span><span class='dot token'>.</span><span class='clear identifier id'>clear</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+
+    <span class='index_adapter identifier id'>index_adapter</span><span class='dot token'>.</span><span class='process_index_batch identifier id'>process_index_batch</span><span class='lparen token'>(</span><span class='buffer identifier id'>buffer</span><span class='comma token'>,</span> <span class='loop identifier id'>loop</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='rparen token'>)</span> <span class='unless unless_mod kw'>unless</span> <span class='buffer identifier id'>buffer</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+  <span class='elsif elsif kw'>elsif</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='respond_to? fid id'>respond_to?</span><span class='lparen token'>(</span><span class='symbol val'>:find</span><span class='rparen token'>)</span>
+    <span class='ar_options identifier id'>ar_options</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='symbol val'>:limit</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='finder_options identifier id'>finder_options</span><span class='lbrack token'>[</span><span class='symbol val'>:batch_size</span><span class='rbrack token'>]</span><span class='rbrace token'>}</span>
+
+    <span class='while while kw'>while</span>
+      <span class='loop identifier id'>loop</span> <span class='opasgn op'>+=</span> <span class='integer val'>1</span>
+
+      <span class='buffer identifier id'>buffer</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='find_without_index identifier id'>find_without_index</span><span class='lparen token'>(</span><span class='symbol val'>:all</span><span class='comma token'>,</span> <span class='ar_options identifier id'>ar_options</span><span class='rparen token'>)</span>
+      <span class='break break kw'>break</span> <span class='if if_mod kw'>if</span> <span class='buffer identifier id'>buffer</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+      <span class='items_processed identifier id'>items_processed</span> <span class='opasgn op'>+=</span> <span class='buffer identifier id'>buffer</span><span class='dot token'>.</span><span class='size identifier id'>size</span>
+
+      <span class='index_adapter identifier id'>index_adapter</span><span class='dot token'>.</span><span class='process_index_batch identifier id'>process_index_batch</span><span class='lparen token'>(</span><span class='buffer identifier id'>buffer</span><span class='comma token'>,</span> <span class='loop identifier id'>loop</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='rparen token'>)</span>
+
+      <span class='break break kw'>break</span> <span class='if if_mod kw'>if</span> <span class='buffer identifier id'>buffer</span><span class='dot token'>.</span><span class='size identifier id'>size</span> <span class='lt op'>&lt;</span> <span class='finder_options identifier id'>finder_options</span><span class='lbrack token'>[</span><span class='symbol val'>:batch_size</span><span class='rbrack token'>]</span>
+
+      <span class='buffer identifier id'>buffer</span><span class='dot token'>.</span><span class='clear identifier id'>clear</span>
+      <span class='ar_options identifier id'>ar_options</span><span class='lbrack token'>[</span><span class='symbol val'>:offset</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='lparen token'>(</span><span class='loop identifier id'>loop</span> <span class='mult op'>*</span> <span class='finder_options identifier id'>finder_options</span><span class='lbrack token'>[</span><span class='symbol val'>:batch_size</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='plus op'>+</span><span class='integer val'>1</span>
+    <span class='end end kw'>end</span>
+  <span class='else else kw'>else</span>
+    <span class='raise identifier id'>raise</span> <span class='string val'>&quot;Your model needs at least a scan() or find() method&quot;</span>
+  <span class='end end kw'>end</span>
+
+  <span class='if if kw'>if</span> <span class='items_processed identifier id'>items_processed</span> <span class='gt op'>&gt;</span> <span class='integer val'>0</span>
+    <span class='logger identifier id'>logger</span><span class='dot token'>.</span><span class='info identifier id'>info</span> <span class='dstring node'>&quot;Index for #{self.index_type} has been rebuilt (#{items_processed} records).&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:silent</span><span class='rbrack token'>]</span>
+  <span class='else else kw'>else</span>
+    <span class='logger identifier id'>logger</span><span class='dot token'>.</span><span class='info identifier id'>info</span> <span class='dstring node'>&quot;Nothing to index for #{self.index_type}.&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:silent</span><span class='rbrack token'>]</span>
+  <span class='end end kw'>end</span>
+
+  <span class='logger identifier id'>logger</span><span class='dot token'>.</span><span class='info identifier id'>info</span> <span class='dstring node'>&quot;=== Finished rebuilding index for: #{self.index_type}&quot;</span> <span class='unless unless_mod kw'>unless</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:silent</span><span class='rbrack token'>]</span>
+
+  <span class='return return kw'>return</span> <span class='items_processed identifier id'>items_processed</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="repository-instance_method">
+  
+    - (<tt>Object</tt>) <strong>repository</strong>(name = nil) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18
+19
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 16</span>
+
+<span class='def def kw'>def</span> <span class='repository identifier id'>repository</span><span class='lparen token'>(</span><span class='name identifier id'>name</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
+  <span class='@repository ivar id'>@repository</span> <span class='orop op'>||</span>
+    <span class='if if kw'>if</span> <span class='block_given? fid id'>block_given?</span>
+      <span class='BigIndex constant id'>BigIndex</span><span class='dot token'>.</span><span class='repository identifier id'>repository</span><span class='lparen token'>(</span><span class='name identifier id'>name</span> <span class='orop op'>||</span> <span class='repository_name identifier id'>repository_name</span><span class='rparen token'>)</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='mult op'>*</span><span class='block_args identifier id'>block_args</span><span class='bitor op'>|</span> <span class='yield yield kw'>yield</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='block_args identifier id'>block_args</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+    <span class='else else kw'>else</span>
+      <span class='BigIndex constant id'>BigIndex</span><span class='dot token'>.</span><span class='repository identifier id'>repository</span><span class='lparen token'>(</span><span class='name identifier id'>name</span> <span class='orop op'>||</span> <span class='repository_name identifier id'>repository_name</span><span class='rparen token'>)</span>
+    <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="repository_name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>repository_name</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 12</span>
+
+<span class='def def kw'>def</span> <span class='repository_name identifier id'>repository_name</span>
+  <span class='Repository constant id'>Repository</span><span class='dot token'>.</span><span class='context identifier id'>context</span><span class='dot token'>.</span><span class='any? fid id'>any?</span> <span class='integer val'>? </span><span class='Repository constant id'>Repository</span><span class='dot token'>.</span><span class='context identifier id'>context</span><span class='dot token'>.</span><span class='last identifier id'>last</span><span class='dot token'>.</span><span class='name identifier id'>name</span> <span class='colon op'>:</span> <span class='default_repository_name identifier id'>default_repository_name</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="required_index_fields-instance_method">
+  
+    - (<tt>Object</tt>) <strong>required_index_fields</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+214
+215
+216</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 214</span>
+
+<span class='def def kw'>def</span> <span class='required_index_fields identifier id'>required_index_fields</span>
+  <span class='lbrack token'>[</span><span class='index_configuration identifier id'>index_configuration</span><span class='lbrack token'>[</span><span class='symbol val'>:type_field</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='index_configuration identifier id'>index_configuration</span><span class='lbrack token'>[</span><span class='symbol val'>:primary_key_field</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='symbol val'>:id</span><span class='rbrack token'>]</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="validate_index_find_options-instance_method">
+  
+    - (<tt>Object</tt>) <strong>validate_index_find_options</strong>(options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Validates the options passed to the find methods based on the accepted keys
+defined in <tt><a title="INDEX_FIND_OPTIONS" href="#INDEX_FIND_OPTIONS-constant">INDEX_FIND_OPTIONS</a></tt>
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+330
+331
+332</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/big_index/model.rb', line 330</span>
+
+<span class='def def kw'>def</span> <span class='validate_index_find_options identifier id'>validate_index_find_options</span><span class='lparen token'>(</span><span class='options identifier id'>options</span><span class='rparen token'>)</span>
+  <span class='options identifier id'>options</span><span class='dot token'>.</span><span class='assert_valid_keys identifier id'>assert_valid_keys</span><span class='lparen token'>(</span><span class='INDEX_FIND_OPTIONS constant id'>INDEX_FIND_OPTIONS</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Thu Nov 26 18:04:50 2009 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.4.0 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>
