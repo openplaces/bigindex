@@ -117,6 +117,11 @@ method and dispatches it to the original Model.find() method, e.g.
 Model.find(:all, :bypass_index =&gt; true). Alternatively, you can use
 Model.find_without_index(:all) for the same functionality.
 </p>
+<p>
+The <tt><a title="BigIndex::Model#index" href="BigIndex/Model.html#index-instance_method">BigIndex::Model#index</a></tt> macro here is used to define which fields will
+be indexed, and how they will be returned. Please refer to that method for
+more information.
+</p>
 <h2>Rebuilding your index</h2>
 <p>
 Once you have your models setup with Bigindex, you will need to rebuild the
@@ -154,7 +159,9 @@ that includes BigIndex::Resource. Be very careful with this task!
 <p>
 Bigindex has a defined schema to use with Solr. If you need to set up Solr
 yourself, you&#8217;ll need to either use the schema.xml defined in this
-project, or create a merged version of it with your own.
+project, or create a merged version of it with your own. You can find the
+schema file here:
+http://github.com/openplaces/bigindex/blob/master/schema.xml
 </p>
 <h2>License</h2>
 <p>
@@ -182,7 +189,7 @@ acts_as_solr.
 </div></div>
     
     <div id="footer">
-  Generated on Thu Nov 26 18:04:48 2009 by 
+  Generated on Thu Nov 26 18:59:15 2009 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.4.0 (ruby-1.8.7).
 </div>
