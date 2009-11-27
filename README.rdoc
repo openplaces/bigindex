@@ -50,6 +50,8 @@ Modify your Ruby class/model similarly to the following:
 
 BigIndex will then override the default Model.find() method to pass through the indexer first. Model.find() will also accept the option ":bypass_index => true", which bypasses the indexed #find method and dispatches it to the original Model.find() method, e.g. Model.find(:all, :bypass_index => true). Alternatively, you can use Model.find_without_index(:all) for the same functionality.
 
+The {BigIndex::Model#index} macro here is used to define which fields will be indexed, and how they will be returned. Please refer to that method for more information.
+
 == Rebuilding your index
 
 Once you have your models setup with Bigindex, you will need to rebuild the index. To do so, run the rake task:
@@ -75,7 +77,7 @@ This will drop the index of any model in your RAILS_ROOT/app/models folder that 
 
 == Solr schema
 
-Bigindex has a defined schema to use with Solr. If you need to set up Solr yourself, you'll need to either use the schema.xml defined in this project, or create a merged version of it with your own.
+Bigindex has a defined schema to use with Solr. If you need to set up Solr yourself, you'll need to either use the schema.xml defined in this project, or create a merged version of it with your own. You can find the schema file here: http://github.com/openplaces/bigindex/blob/master/schema.xml
 
 == License
 
