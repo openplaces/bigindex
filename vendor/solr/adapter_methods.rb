@@ -223,11 +223,17 @@ module Solr
            end
 
            query_options[:field_list] = field_list + ['id']
-           unless query.empty?
-             query = "(#{query.gsub(/ *: */,"_t:")}) AND #{models}" unless options[:no_parsing]
-           else
-             query = "#{models}"
-           end
+            unless query.empty?
+              # this is to avoid replacing : inside double-quotes
+              # I don't know if it needs to be done anywhere else
+              unless options[:no_parsing]
+                output = []
+                query.split('"').each_slice(2){|even, odd|output << even.gsub(/ *: */,'_t:') << odd}
+                query = output.compact.join('"') + " AND #{models}"
+              end
+            else
+              query = models
+            end
 
            order = options[:order]
            order = order.split(/\s*,\s*/).collect{|e| e.gsub(/\s+/,'_t ')  }.join(',') if order && !options[:no_parsing]

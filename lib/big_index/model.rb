@@ -362,7 +362,7 @@ module BigIndex
 
           # quote the query if the field type is :string
           if finder_field = index_field(:#{finder_name})
-            (finder_field.field_type == :string) ?
+            ([:string, :string_array].member?(finder_field.field_type)) ?
               query = "#{finder_name}:(\\"\#{user_query}\\")" : query = "#{finder_name}:(\#{user_query})"
           else
             query = user_query
